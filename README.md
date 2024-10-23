@@ -14,3 +14,14 @@ Applikationen skal indeholde følgende elementer:
 
 Der lægges ikke vægt på design, men på funktionalitet og kode kvalitet.
 ```
+
+### Installing
+
+
+### Running
+
+
+### Code Structure
+
+
+### Project Reflections
