@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore inventoryAPI
+      run: dotnet restore InventoryAPI
     - name: Build
-      run: dotnet build inventoryAPI --no-restore
+      run: dotnet build InventoryAPI --no-restore
     #- name: Test
-    #  run: dotnet test inventoryAPI --no-build --verbosity normal
+    #  run: dotnet test InventoryAPI --no-build --verbosity normal
