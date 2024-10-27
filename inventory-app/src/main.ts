@@ -1,9 +1,10 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
+import { provideRouter, RouterModule } from '@angular/router';  // Add RouterModule import
 import { Routes } from '@angular/router';
 import { StockListComponent } from './app/components/stock-list/stock-list.component';
 import { StockFormComponent } from './app/components/stock-form/stock-form.component';
-import { provideHttpClient } from '@angular/common/http'; // Make sure this is imported
+import { provideHttpClient } from '@angular/common/http';
+import { AppComponent } from './app/app.component';  // Ensure AppComponent is the root
 
 const routes: Routes = [
   { path: '', component: StockListComponent },
@@ -11,9 +12,10 @@ const routes: Routes = [
   { path: 'edit/:id', component: StockFormComponent }
 ];
 
-bootstrapApplication(StockListComponent, {
+// Bootstrap with AppComponent and provide RouterModule and HttpClient
+bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
-    provideHttpClient() // Ensure provideHttpClient is included here
+    provideHttpClient(),
   ]
 }).catch(err => console.error(err));
