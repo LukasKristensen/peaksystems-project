@@ -1,0 +1,13 @@
+<form (ngSubmit)="saveStockItem()">
+    <label>Item Number</label>
+    <input [(ngModel)]="stockItem.itemNumber" name="itemNumber" required>
+  
+    <label>Quantity</label>
+    <input type="number" [(ngModel)]="stockItem.quantity" name="quantity" required>
+  
+    <label>Location</label>
+    <input [(ngModel)]="stockItem.location" name="location" required>
+  
+    <button type="submit">Save</button>
+  </form>
+  
