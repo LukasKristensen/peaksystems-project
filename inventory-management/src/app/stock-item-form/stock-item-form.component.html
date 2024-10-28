@@ -1,6 +1,6 @@
 <form (ngSubmit)="saveStockItem()" class="stock-item-form">
     <div class="form-container">
-      <h2>{{ isEditMode ? 'Edit Stock Item' : 'Add Stock Item' }}</h2>
+      <h2>Add Stock Item</h2>
       
       <div class="form-field">
         <label for="itemNumber">Item Number</label>
@@ -38,9 +38,6 @@
       <div class="button-group">
         <button type="submit" class="submit-button">
           {{ isEditMode ? 'Update' : 'Add' }} Stock Item
-        </button>
-        <button type="button" *ngIf="isEditMode" class="hide-button" (click)="hideForm()">
-          Hide
         </button>
       </div>
     </div>
