@@ -11,6 +11,7 @@ import { StockItem } from '../models/stock-item.model';
   templateUrl: './stock-overview.component.html',
   styleUrls: ['./stock-overview.component.css']
 })
+
 export class StockOverviewComponent implements OnInit {
   stockItems: StockItem[] = [];
   searchTerm: string = '';
@@ -20,7 +21,9 @@ export class StockOverviewComponent implements OnInit {
   constructor(private stockService: StockService) {}
 
   ngOnInit(): void {
-    this.loadStockItems();
+    this.stockService.stockItems$.subscribe(items => {
+      this.stockItems = items; // Update stock items whenever there's a change
+    });
   }
 
   loadStockItems(): void {
