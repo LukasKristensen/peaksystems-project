@@ -46,7 +46,7 @@ To run this project locally, follow these steps:
 3. **Set Up the Backend**
 
    - Navigate to the backend project (`InventoryAPI`).
-   - Run the backend server (exposes a port at `http://localhost:5258/`:
+   - Run the backend server (exposes a port at `http://localhost:5258/`):
      - ```bash
        dotnet run
        ```
