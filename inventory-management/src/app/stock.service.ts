@@ -1,8 +1,7 @@
-// src/app/services/stock.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { StockItem } from '../models/stock-item.model';
+import { StockItem } from './models/stock-item.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +23,8 @@ export class StockService {
     return this.http.post<StockItem>(this.apiUrl, stockItem);
   }
 
-  updateStockItem(stockItem: StockItem): Observable<void> {
-    return this.http.put<void>(`${this.apiUrl}/${stockItem.id}`, stockItem);
+  updateStockItem(id: number, stockItem: StockItem): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${id}`, stockItem);
   }
 
   deleteStockItem(id: number): Observable<void> {

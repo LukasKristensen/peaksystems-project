@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "inventory-app": {
+    "inventory-management": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/inventory-app",
+            "outputPath": "dist/inventory-management",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "inventory-app:build:production"
+              "buildTarget": "inventory-management:build:production"
             },
             "development": {
-              "buildTarget": "inventory-app:build:development"
+              "buildTarget": "inventory-management:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -1,0 +1,7 @@
+<form (ngSubmit)="saveStockItem()">
+    <input [(ngModel)]="stockItem.itemNumber" name="itemNumber" required placeholder="Item Number" />
+    <input type="number" [(ngModel)]="stockItem.quantity" name="quantity" required placeholder="Quantity" />
+    <input [(ngModel)]="stockItem.location" name="location" required placeholder="Location" />
+    <button type="submit">{{ isEditMode ? 'Update' : 'Save' }}</button>
+  </form>
+  
