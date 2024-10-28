@@ -1,27 +1,66 @@
 # PeakSystems Interview Assignment
 
-### Project description
+## Table of Contents
 
-```
-Lav en Angular (v18) applikation, med et tilhørende REST API.NET, hvor man kan håndtere beholdning (Stock). 
-Beholdning skal have en mængde, et varenummer, og en lokation. 
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup Instructions](#setup-instructions)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
 
-Applikationen skal indeholde følgende elementer: 
-- En oversigtsside med en tabel, hvor man kan sortere og søge efter beholdning
-- En side hvor man kan oprette/redigere beholdning
-- Mulighed for at slette beholdning
-- Data til brug i frontend applikationen skal komme fra .NET API'et
+## Features
 
-Der lægges ikke vægt på design, men på funktionalitet og kode kvalitet.
-```
+- Add new stock items
+- Update existing stock items
+- Delete stock items
+- View a list of stock items with search and sorting functionality
+- Real-time updates to the stock inventory
 
-### Installing
+## Technologies Used
 
+- **Frontend**: Angular: 18.2.9 (newest during development), TypeScript, HTML, CSS
+- **Backend**: REST ASP.NET API
+- **Database**: SQL Server
+- **Other Libraries**: RxJS
 
-### Running
+## Setup Instructions
 
+To run this project locally, follow these steps:
 
-### Code Structure
+1. **Clone the Repository**
+   git clone https://github.com/lukaskristensen/peaksystems-project.git
+   cd inventory-management
 
+2. **Install Dependencies**
+   Make sure you have [Node.js](https://nodejs.org/) installed, then run:
+   npm install
 
-### Project Reflections
+3. **Set Up the Backend**
+   - Navigate to your backend project (e.g., `.NET Core` project).
+   - Run the backend server (exposes a port at `http://localhost:5258/`:
+     - ```bash
+       dotnet run
+       ```
+
+4. **Run the Frontend**
+   In the frontend directory run the ```ng serve``` command.
+   This will start the Angular application at `http://localhost:4200/`.
+
+## Usage
+
+- Navigate to `http://localhost:4200/` in your web browser.
+- You will see the Inventory Management interface.
+- You can add, update, or delete stock items as needed.
+- Use the search functionality to filter items.
+
+## API Endpoints
+
+### Stock Items API
+
+| Method | Endpoint                | Description                     |
+|--------|-------------------------|---------------------------------|
+| GET    | /api/StockItems       | Retrieve all stock items       |
+| GET    | /api/StockItems/{id}  | Retrieve a stock item by ID    |
+| POST   | /api/StockItems       | Create a new stock item        |
+| PUT    | /api/StockItems/{id}  | Update an existing stock item   |
+| DELETE | /api/StockItems/{id}  | Delete a stock item            |
