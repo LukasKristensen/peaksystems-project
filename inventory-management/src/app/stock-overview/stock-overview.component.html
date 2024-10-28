@@ -1,0 +1,22 @@
+<input [(ngModel)]="searchTerm" placeholder="Search by item number" />
+
+<table>
+  <thead>
+    <tr>
+      <th (click)="toggleSort('itemNumber')">Item Number</th>
+      <th (click)="toggleSort('quantity')">Quantity</th>
+      <th (click)="toggleSort('location')">Location</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let stockItem of filteredStockItems()">
+      <td>{{ stockItem.itemNumber }}</td>
+      <td>{{ stockItem.quantity }}</td>
+      <td>{{ stockItem.location }}</td>
+      <td>
+        <button (click)="deleteStockItem(stockItem.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
