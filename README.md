@@ -1,6 +1,6 @@
 # PeakSystems Interview Assignment
 
-![App Showcase](readmeAsset/showcase.png)
+![App Showcase](showcase.png)
 
 ## Table of Contents
 
