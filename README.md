@@ -1,5 +1,7 @@
 # PeakSystems Interview Assignment
 
+![App Showcase](readmeAsset/showcase.png)
+
 ## Table of Contents
 
 - [Features](#features)
@@ -36,6 +38,7 @@ To run this project locally, follow these steps:
    npm install
 
 3. **Set Up the Backend**
+
    - Navigate to the backend project (`InventoryAPI`).
    - Run the backend server (exposes a port at `http://localhost:5258/`:
      - ```bash
@@ -45,9 +48,9 @@ To run this project locally, follow these steps:
 4. **Run the Frontend**
    - Navigate to the backend project (`InventoryAPI`).
    - Run the frontend application (starts the application at `http://localhost:4200/`)
-      - ```bash
-         ng serve
-          ```
+     - ```bash
+        ng serve
+       ```
 
 ## Usage
 
@@ -60,10 +63,10 @@ To run this project locally, follow these steps:
 
 ### Stock Items API
 
-| Method | Endpoint                | Description                     |
-|--------|-------------------------|---------------------------------|
-| GET    | /api/StockItems       | Retrieve all stock items       |
-| GET    | /api/StockItems/{id}  | Retrieve a stock item by ID    |
-| POST   | /api/StockItems       | Create a new stock item        |
-| PUT    | /api/StockItems/{id}  | Update an existing stock item   |
-| DELETE | /api/StockItems/{id}  | Delete a stock item            |
+| Method | Endpoint             | Description                   |
+| ------ | -------------------- | ----------------------------- |
+| GET    | /api/StockItems      | Retrieve all stock items      |
+| GET    | /api/StockItems/{id} | Retrieve a stock item by ID   |
+| POST   | /api/StockItems      | Create a new stock item       |
+| PUT    | /api/StockItems/{id} | Update an existing stock item |
+| DELETE | /api/StockItems/{id} | Delete a stock item           |
