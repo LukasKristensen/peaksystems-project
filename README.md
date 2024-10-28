@@ -53,7 +53,7 @@ To run this project locally, follow these steps:
 
 4. **Run the Frontend**
    - Navigate to the backend project (`inventory-management`).
-   - Run the frontend application (starts the application at `http://localhost:4200/`)
+   - Run the frontend application (starts the application at `http://localhost:4200/`):
      - ```bash
         ng serve
        ```
