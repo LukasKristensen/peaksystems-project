@@ -1,4 +1,19 @@
 <input [(ngModel)]="searchTerm" placeholder="Search by item number" />
+
+<div>
+    <span>Sort By:</span>
+    <select (change)="changeSort(sortField)">
+      <option value="itemNumber">Item Number</option>
+      <option value="quantity">Quantity</option>
+      <option value="location">Location</option>
+    </select>
+    <span>Order:</span>
+    <select (change)="changeSort(sortField)">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+  </div>
+
 <table>
     <thead>
     <tr>
@@ -18,9 +33,9 @@
         <button (click)="deleteStockItem(stockItem.id)">Delete</button>
         </td>
     </tr>
-    
     </tbody>
 </table>
+
 <app-stock-item-form 
 *ngIf="showForm" 
 [stockItem]="selectedStockItem" 

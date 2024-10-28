@@ -77,4 +77,31 @@ export class StockOverviewComponent implements OnInit {
     this.loadStockItems(); // Reload stock items to show changes
     this.showForm = false; // Hide the form after saving
   }
+
+  sortItems(): void {
+    this.stockItems.sort((a, b) => {
+      const valueA = a[this.sortField];
+      const valueB = b[this.sortField];
+
+      if (this.sortOrder === 'asc') {
+        return (valueA < valueB ? -1 : 1) * (typeof valueA === 'number' && typeof valueB === 'number' ? 1 : 0);
+      } else {
+        return (valueA > valueB ? -1 : 1) * (typeof valueA === 'number' && typeof valueB === 'number' ? 1 : 0);
+      }
+    });
+  }
+
+  changeSort(value: string): void {
+    // Convert string to keyof StockItem
+    const newField = value as keyof StockItem;
+    
+    if (this.sortField === newField) {
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc'; // Toggle sort order
+    } else {
+      this.sortField = newField; // Change sort field
+      this.sortOrder = 'asc'; // Reset to ascending order
+    }
+    this.sortItems(); // Sort after changing criteria
+  }
 }
+
