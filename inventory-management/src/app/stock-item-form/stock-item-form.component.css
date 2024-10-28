@@ -1,0 +1,79 @@
+/* stock-item-form.component.css */
+.stock-item-form {
+  max-width: 400px; /* Limit width for a more compact form */
+  margin: 20px auto; /* Center the form horizontally */
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Padding around the form */
+  font-family: Arial, sans-serif; /* Clean font */
+}
+
+h2 {
+  text-align: center; /* Center the heading */
+  color: #333; /* Dark text color for the title */
+}
+
+.form-container {
+  display: flex; 
+  flex-direction: column; /* Stack elements vertically */
+}
+
+.form-field {
+  margin-bottom: 16px; /* Space between fields */
+}
+
+label {
+  display: block; /* Make the label a block element */
+  margin-bottom: 4px; /* Space between label and input */
+  font-weight: bold; /* Bold labels */
+  color: #555; /* Darker text for labels */
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%; /* Full width for input fields */
+  padding: 8px; /* Padding inside inputs */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded edges */
+  box-sizing: border-box; /* Include padding in width */
+  font-size: 16px; /* Font size for inputs */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #6200ea; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Space between buttons */
+}
+
+.submit-button {
+  background-color: #6200ea; /* Primary color */
+  color: white; /* Text color */
+  padding: 10px 15px; /* Padding for button */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded edges */
+  cursor: pointer; /* Change cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.submit-button:hover {
+  background-color: #3700b3; /* Darker shade on hover */
+}
+
+.hide-button {
+  background: none; /* No background */
+  color: #6200ea; /* Primary text color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor on hover */
+  font-size: 16px; /* Font size */
+}
+
+.hide-button:hover {
+  text-decoration: underline; /* Underline on hover */
+}

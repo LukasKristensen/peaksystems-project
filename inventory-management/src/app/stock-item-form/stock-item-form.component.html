@@ -1,35 +1,48 @@
-<form (ngSubmit)="saveStockItem()">
-    <div>
-      <label for="itemNumber">Item Number</label>
-      <input 
-        type="text" 
-        id="itemNumber"
-        [(ngModel)]="stockItemForm.itemNumber" 
-        name="itemNumber" 
-        required 
-        placeholder="Enter item number" />
+<form (ngSubmit)="saveStockItem()" class="stock-item-form">
+    <div class="form-container">
+      <h2>{{ isEditMode ? 'Edit Stock Item' : 'Add Stock Item' }}</h2>
+      
+      <div class="form-field">
+        <label for="itemNumber">Item Number</label>
+        <input 
+          type="text" 
+          id="itemNumber"
+          [(ngModel)]="stockItemForm.itemNumber" 
+          name="itemNumber" 
+          required 
+          placeholder="Enter item number" />
+      </div>
+  
+      <div class="form-field">
+        <label for="quantity">Quantity</label>
+        <input 
+          type="number" 
+          id="quantity"
+          [(ngModel)]="stockItemForm.quantity" 
+          name="quantity" 
+          required 
+          placeholder="Enter quantity" />
+      </div>
+  
+      <div class="form-field">
+        <label for="location">Location</label>
+        <input 
+          type="text" 
+          id="location"
+          [(ngModel)]="stockItemForm.location" 
+          name="location" 
+          required 
+          placeholder="Enter location" />
+      </div>
+  
+      <div class="button-group">
+        <button type="submit" class="submit-button">
+          {{ isEditMode ? 'Update' : 'Add' }} Stock Item
+        </button>
+        <button type="button" *ngIf="isEditMode" class="hide-button" (click)="hideForm()">
+          Hide
+        </button>
+      </div>
     </div>
-    <div>
-      <label for="quantity">Quantity</label>
-      <input 
-        type="number" 
-        id="quantity"
-        [(ngModel)]="stockItemForm.quantity" 
-        name="quantity" 
-        required 
-        placeholder="Enter quantity" />
-    </div>
-    <div>
-      <label for="location">Location</label>
-      <input 
-        type="text" 
-        id="location"
-        [(ngModel)]="stockItemForm.location" 
-        name="location" 
-        required 
-        placeholder="Enter location" />
-    </div>
-    <button type="submit">{{ isEditMode ? 'Update' : 'Add' }} Stock Item</button>
-    <button type="button" *ngIf="isEditMode" (click)="hideForm()">Hide</button> <!-- Conditionally show Hide button -->
-</form>
+  </form>
   

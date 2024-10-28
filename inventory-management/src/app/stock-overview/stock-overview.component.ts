@@ -103,5 +103,10 @@ export class StockOverviewComponent implements OnInit {
     }
     this.sortItems(); // Sort after changing criteria
   }
+
+  hideForm(): void {
+    this.showForm = false; // Hide the form
+    this.selectedStockItem = null; // Clear the selected item
+  }
 }
 
