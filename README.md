@@ -36,15 +36,18 @@ To run this project locally, follow these steps:
    npm install
 
 3. **Set Up the Backend**
-   - Navigate to your backend project (e.g., `.NET Core` project).
+   - Navigate to the backend project (`InventoryAPI`).
    - Run the backend server (exposes a port at `http://localhost:5258/`:
      - ```bash
        dotnet run
        ```
 
 4. **Run the Frontend**
-   In the frontend directory run the ```ng serve``` command.
-   This will start the Angular application at `http://localhost:4200/`.
+   - Navigate to the backend project (`InventoryAPI`).
+   - Run the frontend application (starts the application at `http://localhost:4200/`)
+      - ```bash
+         ng serve
+          ```
 
 ## Usage
 
