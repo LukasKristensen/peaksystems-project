@@ -29,13 +29,19 @@
 
 To run this project locally, follow these steps:
 
-1. **Clone the Repository**
-   git clone https://github.com/lukaskristensen/peaksystems-project.git
-   cd inventory-management
+1. **Clone the Repository**:
+   - ```bash
+     git clone https://github.com/lukaskristensen/peaksystems-project.git
+     ```
+   - ```bash
+     cd inventory-management
+     ```
 
 2. **Install Dependencies**
    Make sure you have [Node.js](https://nodejs.org/) installed, then run:
-   npm install
+   - ```bash
+     npm install
+     ```
 
 3. **Set Up the Backend**
 
