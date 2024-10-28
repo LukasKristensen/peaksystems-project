@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { StockService } from '../stock.service';
 import { StockItem } from '../models/stock-item.model';
+import { StockItemFormComponent } from '../stock-item-form/stock-item-form.component'; // Import your form component
 
 @Component({
   selector: 'app-stock-overview',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, StockItemFormComponent],
   templateUrl: './stock-overview.component.html',
   styleUrls: ['./stock-overview.component.css']
 })
@@ -17,10 +18,13 @@ export class StockOverviewComponent implements OnInit {
   searchTerm: string = '';
   sortOrder: string = 'asc';
   sortField: keyof StockItem = 'itemNumber';
+  selectedStockItem: StockItem | null = null; // Track the currently selected item for editing
+  showForm: boolean = false; // To control form visibility
 
   constructor(private stockService: StockService) {}
 
   ngOnInit(): void {
+    this.loadStockItems(); // Load stock items initially
     this.stockService.stockItems$.subscribe(items => {
       this.stockItems = items; // Update stock items whenever there's a change
     });
@@ -59,5 +63,18 @@ export class StockOverviewComponent implements OnInit {
     this.stockService.deleteStockItem(id).subscribe(() => {
       this.loadStockItems();
     });
+    this.showForm = false; // Hide the form after saving
+  }
+
+  editStockItem(stockItem: StockItem): void {
+    console.log('Editing stock item:', stockItem);
+    this.selectedStockItem = stockItem; // Set the selected stock item for editing
+    this.showForm = true; // Show the form when editing
+  }
+
+  onItemSaved(): void {
+    this.selectedStockItem = null; // Clear selection after saving
+    this.loadStockItems(); // Reload stock items to show changes
+    this.showForm = false; // Hide the form after saving
   }
 }

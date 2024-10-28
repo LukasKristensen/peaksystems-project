@@ -1,22 +1,28 @@
 <input [(ngModel)]="searchTerm" placeholder="Search by item number" />
-
 <table>
-  <thead>
+    <thead>
     <tr>
-      <th (click)="toggleSort('itemNumber')">Item Number</th>
-      <th (click)="toggleSort('quantity')">Quantity</th>
-      <th (click)="toggleSort('location')">Location</th>
-      <th>Actions</th>
+        <th (click)="toggleSort('itemNumber')">Item Number</th>
+        <th (click)="toggleSort('quantity')">Quantity</th>
+        <th (click)="toggleSort('location')">Location</th>
+        <th>Actions</th>
     </tr>
-  </thead>
-  <tbody>
+    </thead>
+    <tbody>
     <tr *ngFor="let stockItem of filteredStockItems()">
-      <td>{{ stockItem.itemNumber }}</td>
-      <td>{{ stockItem.quantity }}</td>
-      <td>{{ stockItem.location }}</td>
-      <td>
+        <td>{{ stockItem.itemNumber }}</td>
+        <td>{{ stockItem.quantity }}</td>
+        <td>{{ stockItem.location }}</td>
+        <td>
+        <button (click)="editStockItem(stockItem)">Edit</button>
         <button (click)="deleteStockItem(stockItem.id)">Delete</button>
-      </td>
+        </td>
     </tr>
-  </tbody>
+    
+    </tbody>
 </table>
+<app-stock-item-form 
+*ngIf="showForm" 
+[stockItem]="selectedStockItem" 
+(itemSaved)="onItemSaved()">
+</app-stock-item-form>
